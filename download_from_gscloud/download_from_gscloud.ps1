@@ -29,6 +29,7 @@ For ($presentDate = $StartDate; $presentDate -le $EndDate; $presentDate = $prese
         # Don't forget to close $response or the following requests will time out
         $response.Close()
         #Write-Host $absoluteUri
+        #You have to manually create all parent directoryies of outfile it they don't exist 
         $outFile=$OutDir+$dataId+'.tif'
         (New-Object System.Net.WebClient).DownloadFile($absoluteUri, $outFile)
         Write-Host $outFile
